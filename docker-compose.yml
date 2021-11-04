@@ -2,7 +2,7 @@ version: '2'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "homeassistant/home-assistant:stable"
+    image: ghcr.io/home-assistant/raspberrypi4-homeassistant:stable
     depends_on:
       - mqtt
       - node-red
@@ -11,8 +11,6 @@ services:
     restart: always
     privileged: true
     network_mode: host
-    ports:
-      - 80:80
   mqtt:
     image: eclipse-mosquitto
     volumes:
