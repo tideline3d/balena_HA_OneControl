@@ -2,7 +2,7 @@ version: '2'
 services:
   homeassistant:
     container_name: homeassistant
-    build: homeassistant
+    build: home_assistant
     depends_on:
       - mqtt
       - node-red
