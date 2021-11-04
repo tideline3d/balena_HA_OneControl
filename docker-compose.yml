@@ -11,6 +11,8 @@ services:
     restart: always
     privileged: true
     network_mode: host
+    ports: 
+      - 80:8123
   mqtt:
     image: eclipse-mosquitto
     volumes:
