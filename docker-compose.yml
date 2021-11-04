@@ -35,4 +35,4 @@ networks:
 volumes:
  ha-config: {}
  node-red-data: {}
- mqtt-data:{}
+ mqtt-data: {}
