@@ -2,7 +2,7 @@ name: Deploy to Balena Cloud
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
