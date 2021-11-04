@@ -2,7 +2,7 @@ version: '2'
 services:
   homeassistant:
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
+    image: "homeassistant/home-assistant:stable"
     depends_on:
       - mqtt
       - node-red
