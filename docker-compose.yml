@@ -3,10 +3,36 @@ services:
   homeassistant:
     container_name: homeassistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
+    depends_on:
+      - mqtt
+      - node-red
     volumes:
       - ha-config:/config
     restart: always
     privileged: true
     network_mode: host
+  mqtt:
+    image: eclipse-mosquitto
+    volumes:
+      - mqtt-data:/mosquitto
+    networks:
+      - backend
+    ports:
+      - "1883:1883"
+  node-red:
+    depends_on:
+      - mqtt
+    image: nodered/node-red-docker
+    volumes:
+      - node-red-data:/data
+    user: "0"
+    networks:
+      - backend
+    ports:
+      - "1880:1880"
+networks:
+  backend:
 volumes:
  ha-config: {}
+ node-red-data: {}
+ mqtt-data:{}
