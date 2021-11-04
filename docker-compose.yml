@@ -22,7 +22,7 @@ services:
   node-red:
     depends_on:
       - mqtt
-    image: nodered/node-red-docker
+    image: nodered/node-red
     volumes:
       - node-red-data:/data
     user: "0"
