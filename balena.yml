@@ -1,0 +1,12 @@
+name: "balena-rvha"
+description: "Integrate OneControl RV system with HomeAssitant & HomeKit"
+type: "sw.application"
+assets:
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/tideline3d/balena_HA_OneControl"
+data:
+  defaultDeviceType: "raspberrypi4"
+  supportedDeviceTypes:
+    - "raspberrypi4"
