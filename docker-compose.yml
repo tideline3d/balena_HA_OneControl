@@ -4,7 +4,7 @@ services:
     build: homeassistant
     depends_on:
       - mqtt
-      - node-red
+      - nodered
     volumes:
       - ha-config:/config
     restart: always
@@ -20,10 +20,10 @@ services:
       - backend
     ports:
       - 1883:1883
-  node-red:
+  nodered:
     depends_on:
       - mqtt
-    image: nodered/node-red
+    build: nodered
     volumes:
       - node-red-data:/data
     user: "0"

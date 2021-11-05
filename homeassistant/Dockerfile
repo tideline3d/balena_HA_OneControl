@@ -5,6 +5,7 @@ COPY ui-lovelace.yaml /tmp/ui-lovelace.yaml
 COPY lovelace.sh /tmp/lovelace.sh
 COPY sensors.sh /tmp/sensors.sh
 COPY start.sh /tmp/start.sh
+COPY config.yaml /config/config.yaml
 
 RUN chmod +x /tmp/start.sh
 
